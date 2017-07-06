@@ -1,11 +1,11 @@
 # Clearent Hosted Payment Page Verification
 
-Our Hosted Payment Page offers an additional layer of security, a signed response. This project is a Java example of how to verify our ECDSA signature returned on HPP response, to ensure that our response was not intercepted and modified.
+Our Hosted Payment Page offers an additional layer of security, a signed response. This project is a C# example of how to verify our ECDSA signature returned on HPP response, to ensure that our response was not intercepted and modified.
 
 ## Requirements
 
-- Java 8      - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-- Maven       - http://maven.apache.org/download.cgi
+- Visual Studio
+- Nuget
 
 ## Implementation
 
@@ -13,16 +13,16 @@ You can see an example of how to implement signature verification in the ECDSASi
 
 ## Test
 
-You can see this in action by running our test ECDSASignatureTest by running the JUnit tests for this class. If you have maven configured you can run `mvn test` to run the tests from your command line.
+You can see this in action by running our ECDSASignatureTests in the Visual Studio Test Runner.
 
 ## Usage
 
 These lines in the test file represent the signed content to verify:
 
 ```
-private static final String publicKey = "307a301406072a86410c03620......79e9759eac864df4fc781f466";
-private static final String  message = "This is a test.";
-private static final String  signature = "30650231008418584a5bb66f......eabb233a27dacfe3632ad6194";
+private const string publicKey = "307a301406072a86410c03620......79e9759eac864df4fc781f466";
+private const string message = "This is a test.";
+private const string signature = "30650231008418584a5bb66f......eabb233a27dacfe3632ad6194";
 ```
 
 In the real world your transaction response will look something like this (the signature will be much longer but shortened here for brevity):
